@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman Game</title>
+    <link rel="shortcut icon" href="./public/images/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./public/styles/style.css">
+    <script src="./public/scripts/main.js" defer></script>
+  </head>
+  <body>
+    <h1 class="text title">Hangman Game</h1>
+    <div class="board">
+      <div class="head animation">
+        <div class="face"></div>
+      </div>
+      <div class="flex-row">
+        <div class="stick r animation"></div>
+        <div class="torso animation"></div>
+        <div class="stick l animation"></div>
+      </div>
+      <div class="flex-row bottom">
+        <div class="stick r animation"></div>
+        <div class="stick l animation"></div>
+      </div>
+    </div>
+    <p class="text category">Category:</p>
+    <p class="text secret-word"></p>
+    <p class="text result"></p>
+    <p class="text small">&copy; 2022 Pedro Carvalho</p>
+  </body>
+</html>

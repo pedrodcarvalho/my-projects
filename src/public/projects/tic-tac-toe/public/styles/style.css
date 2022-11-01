@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
+
+::selection {
+  background: transparent;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: default;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-variant: small-caps;
+  background-color: #181818;
+  color: #e7e7e7;
+}
+
+.text {
+  display: flex;
+  justify-content: center;
+  font-size: 3rem;
+  margin-bottom: 5vh;
+}
+
+.small {
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+}
+
+.board div {
+  display: flex;
+  justify-content: center;
+}
+
+.square {
+  font-family: "Permanent Marker", cursive;
+  width: 20vh;
+  height: 20vh;
+  align-items: center;
+  transition: ease-in-out 0.25s;
+}
+
+.square:hover {
+  background-color: #292929;
+  cursor: pointer;
+  border: solid 10px #292929;
+}
+
+.vertex-1 {
+  border-top-left-radius: 15px;
+}
+
+.vertex-2 {
+  border-top-right-radius: 15px;
+}
+
+.vertex-3 {
+  border-bottom-left-radius: 15px;
+}
+
+.vertex-4 {
+  border-bottom-right-radius: 15px;
+}
+
+.line {
+  width: 10px;
+  height: 20vh;
+  background-color: #e7e7e7;
+}
+
+.horizontal {
+  width: calc(60vh + 20px);
+  height: 10px;
+}
+
+.result {
+  height: 70px;
+  margin-bottom: 0;
+  margin-top: 3vh;
+  transition: ease-in-out 0.25s;
+}
