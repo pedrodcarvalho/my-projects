@@ -11,17 +11,14 @@ const checkInput = (input) => {
         (input === '.' && display.innerHTML[display.innerHTML.length - 1] === '.')) {
         return false;
     }
-    if (!isNaN(input) && calculator.result !== undefined && display.innerHTML[display.innerHTML.length - 1] !== ' ') {
-        return false;
-    }
 
     return true;
 };
 
 const checkEqualSign = (input) => {
     if (input === '=') {
-        display.innerHTML.split(' ').map((i) => {
-            calculator.expression.push(i);
+        display.innerHTML.split(' ').map((num) => {
+            calculator.expression.push(num);
         });
 
         calculateResult(calculator.expression);
@@ -30,33 +27,42 @@ const checkEqualSign = (input) => {
 };
 
 const calculateResult = (expression) => {
-    expression.map((i) => {
-        if (!isNaN(parseFloat(i)) && calculator.result === undefined) {
-            calculator.result = parseFloat(i);
+    expression.map((num) => {
+        if (!isNaN(parseFloat(num)) && calculator.result === undefined) {
+            calculator.result = parseFloat(num);
         }
-        else if (isNaN(i)) {
-            calculator.op = i;
+        else if (isNaN(num)) {
+            calculator.op = num;
         }
         else {
             switch (calculator.op) {
                 case '+':
-                    calculator.result += parseFloat(i);
+                    calculator.result += parseFloat(num);
                     break;
                 case '-':
-                    calculator.result -= parseFloat(i);
+                    calculator.result -= parseFloat(num);
                     break;
                 case '*':
-                    calculator.result *= parseFloat(i);
+                    calculator.result *= parseFloat(num);
                     break;
                 case '/':
-                    parseFloat(i) === 0 ? calculator.result = 0 : calculator.result /= parseFloat(i);
+                    parseFloat(num) === 0 ? calculator.result = 0 : calculator.result /= parseFloat(num);
             }
         }
     });
 };
 
 const printResult = (result) => {
-    display.innerHTML = result;
+    result = result.toFixed(2);
+
+    result.toString();
+
+    if (result.includes('.00')) {
+        display.innerHTML = parseInt(result).toFixed(0);
+    }
+    else {
+        display.innerHTML = result;
+    }
 
     calculator.expression = [];
 };

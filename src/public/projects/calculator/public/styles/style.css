@@ -19,14 +19,26 @@ body {
 }
 
 .text {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
+  font-size: 3rem;
+  margin-bottom: 5vh;
 }
 
 .small {
-  margin-top: 20px;
-  margin-bottom: 0;
+  font-size: 0.9rem;
+  margin-top: 2.5vh;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .calculator {
