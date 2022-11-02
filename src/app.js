@@ -1,30 +1,22 @@
 const http = require('node:http');
-const fs = require('node:fs');
+const { sendFile } = require('./routes/router');
+const { getWeather } = require('./routes/apis/weather');
 require('dotenv').config()
 
-const hostname = process.env.HOSTNAME || '127.0.0.1';
-const port = process.env.PORT || 5000;
-
-const sendFile = (res, path, contentType) => {
-    fs.readFile(`${__dirname}/public${path}`, (err, data) => {
-        if (err) {
-            res.statusCode = 500;
-            res.write(`Error: ${err.code}`);
-        } else {
-            res.statusCode = 200;
-            res.setHeader('Content-Type', `${contentType}`);
-            res.write(data);
-        }
-
-        res.end();
-    });
-};
+const hostname = process.env.HOSTNAME || 'localhost';
+const port = process.env.PORT || 3000;
 
 const server = http.createServer((req, res) => {
+    if (req.url === `/weather?city=${req.url.split('=')[1]}`) {
+        return getWeather(req, res);
+    }
+
     switch (req.url.split('.')[1]) {
         case undefined:
-            sendFile(res, '/index.html', 'text/html');
-            break;
+            if (req.url === '/') {
+                sendFile(res, '/index.html', 'text/html');
+                break;
+            }
         case 'html':
             sendFile(res, req.url, 'text/html');
             break;
@@ -38,12 +30,9 @@ const server = http.createServer((req, res) => {
             sendFile(res, req.url, 'image/png');
             break;
         default:
-            res.statusCode = 404;
-            res.write('Error: 404');
-            res.end();
+            sendFile(res, '/pages/404.html', 'text/html');
     }
 });
-
 
 server.listen(port, hostname, () => {
     console.log(`Server running at http://${hostname}:${port}/`);
