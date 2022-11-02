@@ -30,15 +30,12 @@ body {
 
 .flex {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.column {
+  flex-direction: column;
 }
 
 .projects {
@@ -49,10 +46,10 @@ body {
   color: #181818;
   border: 2px solid #181818;
   border-radius: 12px;
-  padding: 20px;
-  margin: 0px 5px 0px 5px;
+  padding: 10px;
+  margin: 0 5px 0 5px;
   font-family: "Poppins", sans-serif;
-  font-size: 1.5rem;
+  font-size: 1.5em;
   font-variant: small-caps;
 }
 
@@ -62,4 +59,10 @@ body {
   cursor: pointer;
   border: 2px solid #e7e7e7;
   transition: ease-in-out 0.25s;
+}
+
+@media screen and (max-width: 768px) {
+  .projects {
+    flex-direction: column;
+  }
 }

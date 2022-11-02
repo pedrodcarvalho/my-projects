@@ -34,6 +34,8 @@ getIcon = (icon) => {
         case '50d':
         case '50n':
             return '50d@2x.png';
+        default:
+            return false;
 
     }
 };
@@ -41,21 +43,21 @@ getIcon = (icon) => {
 document.getElementById('submit').addEventListener('click', () => {
     const CITY = document.getElementById('city').value;
 
-    fetch(`http://localhost:3000/weather?city=${CITY}`).then(res => res.json()
+    fetch(`/weather?city=${CITY}`).then(res => res.json()
     ).then(data => {
         try {
             temperature.innerHTML = `
-            <p>Temperature for ${data.name} [${data.sys.country}]</p>
+            <p>Temperature for ${data.name}<span id="country" class="flex small">[${data.sys.country}]</span></p>
             <p>Temperature: ${data.main.temp.toFixed(1)} °C</p>
             <p>Max: ${data.main.temp_max.toFixed(1)} °C</p>
             <p>Min: ${data.main.temp_min.toFixed(1)} °C</p>
             <p>Feels like: ${data.main.feels_like.toFixed(1)} °C</p>
-            <p>Humidity: ${data.main.humidity}% | Pressure: ${data.main.pressure}hPa | Wind speed: ${(data.wind.speed * 3.6).toFixed(1)} km/h</p>
+            <p class="small">Humidity: ${data.main.humidity}% | Pressure: ${data.main.pressure}hPa | Wind speed: ${(data.wind.speed * 3.6).toFixed(1)} km/h</p>
             `;
 
             description.innerHTML = `
             <p>${data.weather[0].description}</p>
-            <img src="./public/images/${getIcon(data.weather[0].icon)}">
+            ${getIcon(data.weather[0].icon) ? `<img src="./public/images/${getIcon(data.weather[0].icon)}">` : ''}
             `;
 
             sun.innerHTML = `
