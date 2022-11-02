@@ -30,15 +30,12 @@ body {
 
 .flex {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.column {
+  flex-direction: column;
 }
 
 .calculator {
@@ -69,4 +66,22 @@ body {
   color: #e7e7e7;
   border: solid 5px #181818;
   transition: ease-in-out 0.25s;
+}
+
+.home-page {
+  text-decoration: none;
+  color: #e7e7e7;
+  margin-top: 2.5vh;
+}
+
+.home-page:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  transition: ease-in-out 0.25s;
+}
+
+@media screen and (max-width: 320px) {
+  .buttons button {
+    width: 20vw;
+  }
 }

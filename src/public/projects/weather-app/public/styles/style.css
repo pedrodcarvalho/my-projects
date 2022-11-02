@@ -18,27 +18,28 @@ body {
   color: #e7e7e7;
 }
 
+#country {
+  margin-top: 0;
+}
+
 .text {
   font-size: 3rem;
   margin-bottom: 5vh;
 }
 
 .small {
-  font-size: 0.9rem;
+  font-size: 0.9rem !important;
   margin-top: 2.5vh;
 }
 
 .flex {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.column {
+  flex-direction: column;
 }
 
 .weather p {
@@ -63,7 +64,7 @@ body {
   color: #181818;
   caret-color: #181818;
   border: 5px solid #e7e7e7;
-  border-radius: 12px 0px 0px 12px;
+  border-radius: 12px 0 0 12px;
   font-size: 1.25rem;
   outline: none;
 }
@@ -84,7 +85,7 @@ body {
   color: #181818;
   padding: 5px;
   border: 2px solid #e7e7e7;
-  border-radius: 0px 12px 12px 0px;
+  border-radius: 0 12px 12px 0;
   font-size: 1.25rem;
 }
 
@@ -93,4 +94,26 @@ body {
   color: #e7e7e7;
   cursor: pointer;
   transition: ease-in-out 0.25s;
+}
+
+.home-page {
+  text-decoration: none;
+  color: #e7e7e7;
+  margin-top: 2.5vh;
+}
+
+.home-page:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  transition: ease-in-out 0.25s;
+}
+
+@media screen and (max-width: 425px) {
+  .input input[type="text"] {
+    width: 50vw;
+  }
+
+  .input button {
+    width: 25vw;
+  }
 }
