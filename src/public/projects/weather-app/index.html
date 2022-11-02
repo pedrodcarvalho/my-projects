@@ -10,17 +10,18 @@
     <script src="./public/scripts/main.js" defer></script>
   </head>
   <body>
-    <div class="flex">
+    <div class="flex column">
       <h1 class="text">Weather App</h1>
       <div class="input">
         <input type="text" id="city" placeholder="Enter city name">
         <button id="submit">Search</button>
       </div>
-      <div class="flex weather">
+      <div class="flex column weather">
         <div id="temperature" class="margin"></div>
-        <div id="description" class="row margin"></div>
+        <div id="description" class="flex margin"></div>
         <div id="sun" class="margin"></div>
       </div>
+      <a href="/" class="home-page">Back to home page</a>
       <p class="small">&copy; 2022 Pedro Carvalho</p>
     </div>
   </body>

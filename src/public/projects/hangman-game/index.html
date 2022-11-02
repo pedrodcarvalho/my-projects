@@ -10,18 +10,18 @@
     <script src="./public/scripts/main.js" defer></script>
   </head>
   <body>
-    <div class="flex">
+    <div class="flex column">
       <h1 class="text title">Hangman Game</h1>
       <div class="board">
         <div class="head animation">
           <div class="face"></div>
         </div>
-        <div class="row">
+        <div class="flex">
           <div class="stick arm r animation"></div>
           <div class="torso animation"></div>
           <div class="stick arm l animation"></div>
         </div>
-        <div class="row bottom">
+        <div class="flex bottom">
           <div class="stick r animation"></div>
           <div class="stick l animation"></div>
         </div>
@@ -29,6 +29,7 @@
       <p class="text category">Category:</p>
       <p class="text secret-word"></p>
       <p class="text result"></p>
+      <a href="/" class="home-page">Back to home page</a>
       <p class="small">&copy; 2022 Pedro Carvalho</p>
     </div>
   </body>
