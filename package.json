@@ -1,5 +1,23 @@
 {
-  "dependencies": {
-    "dotenv": "^16.0.3"
-  }
+    "name": "my-projects",
+    "version": "1.0.0",
+    "main": "./src/app.js",
+    "devDependencies": {},
+    "scripts": {
+        "start": "nodemon app.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/pedrodcarvalho/my-projects.git"
+    },
+    "author": "pedrodcarvalho",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/pedrodcarvalho/my-projects/issues"
+    },
+    "homepage": "https://github.com/pedrodcarvalho/my-projects#readme",
+    "description": "Website for my projects",
+    "dependencies": {
+        "dotenv": "^16.0.3"
+    }
 }
