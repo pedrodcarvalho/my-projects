@@ -4,6 +4,23 @@
   background: transparent;
 }
 
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #292929;
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e7e7e7;
+}
+
 * {
   margin: 0;
   padding: 0;
