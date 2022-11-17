@@ -1,14 +1,13 @@
 const secondsPointer = document.querySelector('.seconds');
 const minutesPointer = document.querySelector('.minutes');
 const hoursPointer = document.querySelector('.hours');
-const circleSize = document.querySelector('.circle').offsetWidth;
 const numbers = document.querySelectorAll('.numbers');
+const circleSize = document.querySelector('.circle').offsetWidth;
 
-let time = {
-    hours: 0,
-    minutes: 0,
-    seconds: 0
-};
+const startClock = document.getElementById('start-clock');
+
+const tic = new Audio('./public/assets/audios/tic.mp3');
+const tac = new Audio('./public/assets/audios/tac.mp3');
 
 for (const number of numbers[0].childNodes) {
     if (number.nodeType === 1) {
@@ -59,27 +58,47 @@ for (const number of numbers[0].childNodes) {
     }
 }
 
-setInterval(() => {
-    const getTime = () => {
-        const date = new Date();
+let time = {
+    hours: 0,
+    minutes: 0,
+    seconds: 0
+};
 
-        return {
-            hours: date.getHours(),
-            minutes: date.getMinutes(),
-            seconds: date.getSeconds()
-        };
+const getTime = () => {
+    const date = new Date();
+
+    return {
+        hours: date.getHours(),
+        minutes: date.getMinutes(),
+        seconds: date.getSeconds()
     };
+};
 
-    time = getTime();
+const setTime = () => {
+    secondsPointer.style.transform = `rotate(${time.seconds * 6}deg)`;
+    minutesPointer.style.transform = `rotate(${time.minutes * 6}deg)`;
+    hoursPointer.style.transform = `rotate(${time.hours * 30}deg)`;
+};
 
-    const setTime = () => {
-        secondsPointer.style.transform = `rotate(${time.seconds * 6}deg)`;
-        minutesPointer.style.transform = `rotate(${time.minutes * 6}deg)`;
-        hoursPointer.style.transform = `rotate(${time.hours * 30}deg)`;
-    };
+const playSound = (seconds) => {
+    seconds % 2 === 1 ? tic.play() : tac.play();
+};
 
-    setTime();
-}, 1000);
+startClock.addEventListener('click', async () => {
+    startClock.classList.add('fade-out');
+
+    setTimeout(() => {
+        startClock.remove();
+    }, 250);
+
+    setInterval(() => {
+        time = getTime();
+
+        setTime();
+
+        playSound(time.seconds);
+    }, 1000);
+});
 
 secondsPointer.style.marginBottom = `${circleSize / 2.15}px`;
 minutesPointer.style.marginBottom = `${circleSize / 3.035}px`;

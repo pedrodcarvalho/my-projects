@@ -38,6 +38,25 @@ body {
   flex-direction: column;
 }
 
+.flex button {
+  color: #181818;
+  border: 2px solid #181818;
+  border-radius: 12px;
+  padding: 10px;
+  margin-top: 2.5vh;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5em;
+  font-variant: small-caps;
+}
+
+.flex button:hover {
+  background-color: #181818;
+  color: #e7e7e7;
+  cursor: pointer;
+  border: 2px solid #e7e7e7;
+  transition: ease-in-out 0.25s;
+}
+
 .home-page {
   text-decoration: none;
   color: #e7e7e7;
@@ -102,6 +121,11 @@ body {
 .numbers span {
   position: absolute;
   font-size: 2rem;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: ease-in-out 0.25s;
 }
 
 @media screen and (max-width: 375px) {
