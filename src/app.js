@@ -30,6 +30,9 @@ const server = http.createServer((req, res) => {
     else if (req.url.split('.')[1] === 'png') {
         sendFile(res, req.url, 'image/png');
     }
+    else if (req.url.split('.')[1] === 'mp3') {
+        sendFile(res, req.url, 'audio/mpeg');
+    }
     else {
         sendFile(res, '/pages/404.html', 'text/html');
     }

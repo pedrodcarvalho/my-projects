@@ -1,10 +1,18 @@
+const rows = document.getElementsByClassName('projects');
+
 window.onload = () => {
-    setProjectsBtnsWidth();
+    setProjects();
 };
 
-const setProjectsBtnsWidth = () => {
-    const btns = document.getElementsByClassName('projects')[0];
+const setProjectsBtns = (btns) => {
+    for (let i = 0; i < btns.children.length; i++) {
+        btns.children[i].addEventListener('click', () => {
+            window.location.href = `/projects/${btns.children[i].id}/index.html`;
+        });
+    }
+};
 
+const setProjectsBtnsWidth = (btns) => {
     let maxBtnWidth = btns.children[0].offsetWidth;
 
     for (let i = 1; i < btns.children.length; i++) {
@@ -18,26 +26,11 @@ const setProjectsBtnsWidth = () => {
     }
 };
 
-document.getElementById('calculator').addEventListener('click', () => {
-    window.location.href = '/projects/calculator/index.html';
-});
+const setProjects = () => {
+    for (let i = 0; i < rows.length; i++) {
+        let btns = document.getElementsByClassName('projects')[i];
 
-document.getElementById('hangman-game').addEventListener('click', () => {
-    window.location.href = '/projects/hangman-game/index.html';
-});
-
-document.getElementById('tic-tac-toe').addEventListener('click', () => {
-    window.location.href = '/projects/tic-tac-toe/index.html';
-});
-
-document.getElementById('to-do').addEventListener('click', () => {
-    window.location.href = '/projects/to-do/index.html';
-});
-
-document.getElementById('weather-app').addEventListener('click', () => {
-    window.location.href = '/projects/weather-app/index.html';
-});
-
-document.getElementById('clock').addEventListener('click', () => {
-    window.location.href = '/projects/clock/index.html';
-});
+        setProjectsBtns(btns);
+        setProjectsBtnsWidth(btns);
+    }
+};
