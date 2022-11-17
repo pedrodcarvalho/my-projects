@@ -37,3 +37,7 @@ document.getElementById('to-do').addEventListener('click', () => {
 document.getElementById('weather-app').addEventListener('click', () => {
     window.location.href = '/projects/weather-app/index.html';
 });
+
+document.getElementById('clock').addEventListener('click', () => {
+    window.location.href = '/projects/clock/index.html';
+});
