@@ -1,7 +1,7 @@
 const http = require('node:http');
 const { sendFile } = require('./routes/router');
 const { getWeather } = require('./routes/apis/weather');
-require('dotenv').config()
+require('dotenv').config();
 
 const hostname = process.env.HOSTNAME || 'localhost';
 const port = process.env.PORT || 3000;

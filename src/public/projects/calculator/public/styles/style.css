@@ -68,6 +68,10 @@ body {
   transition: ease-in-out 0.25s;
 }
 
+.buttons .double  {
+  width: 150px;
+}
+
 .home-page {
   text-decoration: none;
   color: #e7e7e7;
@@ -83,5 +87,8 @@ body {
 @media screen and (max-width: 320px) {
   .buttons button {
     width: 20vw;
+  }
+  .buttons .double {
+    width: 42vw;
   }
 }

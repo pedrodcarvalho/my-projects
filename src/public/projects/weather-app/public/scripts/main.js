@@ -1,3 +1,4 @@
+const weatherData = document.querySelector('.weather');
 const temperature = document.getElementById('temperature');
 const description = document.getElementById('description');
 const sun = document.getElementById('sun');
@@ -69,5 +70,7 @@ document.getElementById('submit').addEventListener('click', () => {
             description.innerHTML = '<h1>City not found</h1>';
             sun.innerHTML = '';
         }
+
+        weatherData.classList.add('show');
     });
 });

@@ -40,6 +40,7 @@ body {
 
 .flex input {
   width: 50%;
+  height: 75px;
   font-family: "Poppins", sans-serif;
   font-variant: small-caps;
   color: #181818;
@@ -79,19 +80,23 @@ body {
   cursor: pointer;
 }
 
+.flex button:hover > * {
+  cursor: pointer;
+}
+
 .flex button:active {
   background-color: #9acd31;
 }
 
-.todo button[value="delete"]:active {
+.todo button[id="delete"]:active {
   background-color: #ed2939;
 }
 
-.todo button[value="done"] {
+.todo button[id="done"] {
   border-radius: 12px 0 0 12px;
 }
 
-.todo button[value="done"]:active {
+.todo button[id="done"]:active {
   background-color: #9acd31;
 }
 
@@ -105,8 +110,12 @@ body {
   text-decoration: line-through;
 }
 
+.add {
+  animation: fade-in 0.5s ease-in-out;
+}
+
 .delete {
-  animation: animate 0.5s ease-in-out;
+  animation: fade-out 0.5s ease-in-out;
 }
 
 .home-page {
@@ -118,10 +127,19 @@ body {
 .home-page:hover {
   cursor: pointer;
   text-decoration: underline;
-  transition: ease-in-out 0.25s;
+  transition: 0.25s ease-in-out;
 }
 
-@keyframes animate {
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
   0% {
     opacity: 1;
   }

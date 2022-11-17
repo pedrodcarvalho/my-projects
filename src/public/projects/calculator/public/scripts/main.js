@@ -47,6 +47,9 @@ const calculateResult = (expression) => {
                     break;
                 case '/':
                     parseFloat(num) === 0 ? calculator.result = 0 : calculator.result /= parseFloat(num);
+                    break;
+                case '%':
+                    calculator.result %= parseFloat(num);
             }
         }
     });
@@ -57,21 +60,23 @@ const printResult = (result) => {
 
     result.toString();
 
-    if (result.includes('.00')) {
-        display.innerHTML = parseInt(result).toFixed(0);
-    }
-    else {
-        display.innerHTML = result;
-    }
+    result.includes('.00') ? display.innerHTML = parseInt(result).toFixed(0) : display.innerHTML = result;
 
     calculator.expression = [];
 };
 
 document.querySelector('.calculator').addEventListener('click', (e) => {
     if (e.target.matches('button')) {
-        if (e.target.value == 'ac') {
+        if (e.target.value === 'ac') {
             display.innerHTML = '';
             calculator.result = undefined;
+        }
+        else if (e.target.value === '+-') {
+            display.innerHTML[0] === '-' ? display.innerHTML = display.innerHTML.slice(1) : display.innerHTML = '-' + display.innerHTML;
+
+            calculator.result = parseFloat(display.innerHTML);
+
+            printResult(calculator.result);
         }
         else if (checkInput(e.target.value)) {
             display.innerHTML += isNaN(e.target.value) && e.target.value != '.' ? ` ${e.target.value} ` : e.target.value;
