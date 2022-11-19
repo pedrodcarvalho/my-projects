@@ -3,7 +3,7 @@ const temperature = document.getElementById('temperature');
 const description = document.getElementById('description');
 const sun = document.getElementById('sun');
 
-getIcon = (icon) => {
+const getIcon = (icon) => {
     switch (icon) {
         case '01d':
             return '01d@2x.png';
@@ -44,8 +44,11 @@ getIcon = (icon) => {
 document.getElementById('submit').addEventListener('click', () => {
     const CITY = document.getElementById('city').value;
 
-    fetch(`/weather?city=${CITY}`).then(res => res.json()
-    ).then(data => {
+    fetch(`/weather?city=${CITY}`).then((res) => {
+        weatherData.classList.remove('show');
+
+        return res.json();
+    }).then(data => {
         try {
             temperature.innerHTML = `
             <p>Temperature for ${data.name}<span id="country" class="flex small">[${data.sys.country}]</span></p>

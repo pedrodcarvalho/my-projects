@@ -84,7 +84,7 @@ const playSound = (seconds) => {
     seconds % 2 === 1 ? tic.play() : tac.play();
 };
 
-startClock.addEventListener('click', async () => {
+startClock.addEventListener('click', () => {
     startClock.classList.add('fade-out');
 
     setTimeout(() => {
