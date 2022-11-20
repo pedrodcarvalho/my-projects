@@ -6,6 +6,8 @@ document.getElementById('search').addEventListener('click', () => {
     const movieName = document.getElementById('movie-name').value;
 
     fetch(`/movie?name=${movieName}`).then((res) => {
+        moviesTemplate.classList.remove('show');
+
         return res.json();
     }).then((data) => {
         dataCached = data;
@@ -45,6 +47,9 @@ document.getElementById('search').addEventListener('click', () => {
             });
 
             moviesTemplate.innerHTML = moviesObj.moviesHTML;
+
+            moviesTemplate.classList.add('show');
+
             moviesHTMLCached = moviesObj.moviesHTML;
 
             setMoviesPage(data);
@@ -85,12 +90,22 @@ const setMovieDetailedInfo = (movie) => {
     <button id="back" class="back">Go back</button>
     `;
 
+    moviesTemplate.classList.remove('show');
+
     moviesTemplate.innerHTML = movieInfo;
 
+    setTimeout(() => {
+        moviesTemplate.classList.add('show');
+    }, 100);
+
     document.getElementById('back').addEventListener('click', () => {
+        moviesTemplate.classList.remove('show');
+
         moviesTemplate.innerHTML = moviesHTMLCached;
 
         setMoviesPage(dataCached);
+
+        moviesTemplate.classList.add('show');
     });
 };
 
