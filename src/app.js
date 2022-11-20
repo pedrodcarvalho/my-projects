@@ -1,6 +1,7 @@
 const http = require('node:http');
 const { sendFile } = require('./routes/router');
 const { getWeather } = require('./routes/apis/weather');
+const { getMovie } = require('./routes/apis/movie');
 require('dotenv').config();
 
 const hostname = process.env.HOSTNAME || 'localhost';
@@ -13,6 +14,9 @@ const server = http.createServer((req, res) => {
         }
         else if (req.url.split('?')[0] === '/weather') {
             getWeather(req, res);
+        }
+        else if (req.url.split('?')[0] === '/movie') {
+            getMovie(req, res);
         }
         else {
             sendFile(res, '/pages/404.html', 'text/html');
