@@ -114,10 +114,6 @@ body {
   transition: ease-in-out 0.25s;
 }
 
-.movies * {
-  margin: 10px;
-}
-
 .movies span {
   margin: 0;
 }
@@ -125,7 +121,7 @@ body {
 .movies div {
   max-width: 19vw;
   max-height: 100%;
-  margin: 0 5px 15px 5px;
+  margin: 0 4px 15px 4px;
   align-items: flex-start;
 }
 
@@ -170,7 +166,7 @@ body {
   transition: ease-in-out 0.25s;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 768px) {
   .input input[type="text"] {
     width: 50vw;
   }
