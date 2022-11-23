@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
+
+::selection {
+  background: transparent;
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #292929;
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e7e7e7;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: default;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-variant: small-caps;
+  background-color: #181818;
+  color: #e7e7e7;
+}
+
+.text {
+  font-size: 3rem;
+  margin-bottom: 5vh;
+}
+
+.small {
+  font-size: 0.9rem;
+  margin-top: 2.5vh;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.column {
+  flex-direction: column;
+}
+
+p.score {
+  width: 100px;
+  margin-bottom: 1vh;
+}
+
+.canvas {
+  border: 4px solid #292929;
+  border-radius: 12px;
+}
+
+.game-over {
+  animation: gameOver 1s ease-in-out;
+}
+
+.hide {
+  display: none;
+}
+
+.home-page {
+  text-decoration: none;
+  color: #e7e7e7;
+  margin-top: 2.5vh;
+}
+
+.home-page:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  transition: ease-in-out 0.25s;
+}
+
+@keyframes gameOver {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
