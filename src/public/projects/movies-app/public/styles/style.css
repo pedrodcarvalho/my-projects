@@ -55,6 +55,18 @@ body {
   flex-direction: column;
 }
 
+.home-page {
+  text-decoration: none;
+  color: #e7e7e7;
+  margin-top: 2.5vh;
+}
+
+.home-page:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  transition: ease-in-out 0.25s;
+}
+
 .input {
   display: flex;
   margin-bottom: 2.5vh;
@@ -167,18 +179,6 @@ p {
   border: 2px solid #e7e7e7;
   border-radius: 12px;
   font-size: 1.25rem;
-}
-
-.home-page {
-  text-decoration: none;
-  color: #e7e7e7;
-  margin-top: 2.5vh;
-}
-
-.home-page:hover {
-  cursor: pointer;
-  text-decoration: underline;
-  transition: ease-in-out 0.25s;
 }
 
 @media screen and (max-width: 768px) {

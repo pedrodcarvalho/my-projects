@@ -55,6 +55,18 @@ body {
   flex-direction: column;
 }
 
+.home-page {
+  text-decoration: none;
+  color: #e7e7e7;
+  margin-top: 2.5vh;
+}
+
+.home-page:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  transition: ease-in-out 0.25s;
+}
+
 p.score {
   width: 100px;
   margin-bottom: 1vh;
@@ -71,18 +83,6 @@ p.score {
 
 .hide {
   display: none;
-}
-
-.home-page {
-  text-decoration: none;
-  color: #e7e7e7;
-  margin-top: 2.5vh;
-}
-
-.home-page:hover {
-  cursor: pointer;
-  text-decoration: underline;
-  transition: ease-in-out 0.25s;
 }
 
 @keyframes gameOver {

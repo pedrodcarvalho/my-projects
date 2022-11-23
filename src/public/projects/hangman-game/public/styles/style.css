@@ -55,6 +55,18 @@ body {
   flex-direction: column;
 }
 
+.home-page {
+  text-decoration: none;
+  color: #e7e7e7;
+  margin-top: 2.5vh;
+}
+
+.home-page:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  transition: ease-in-out 0.25s;
+}
+
 .board {
   display: flex;
   flex-direction: column;
@@ -138,16 +150,4 @@ body {
   font-size: 4rem;
   margin-top: 5vh;
   transition: ease-in-out 0.5s;
-}
-
-.home-page {
-  text-decoration: none;
-  color: #e7e7e7;
-  margin-top: 2.5vh;
-}
-
-.home-page:hover {
-  cursor: pointer;
-  text-decoration: underline;
-  transition: ease-in-out 0.25s;
 }

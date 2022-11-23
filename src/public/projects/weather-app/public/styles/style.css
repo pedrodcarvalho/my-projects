@@ -59,6 +59,18 @@ body {
   flex-direction: column;
 }
 
+.home-page {
+  text-decoration: none;
+  color: #e7e7e7;
+  margin-top: 2.5vh;
+}
+
+.home-page:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  transition: ease-in-out 0.25s;
+}
+
 .weather p {
   display: flex;
   justify-content: center;
@@ -119,18 +131,6 @@ body {
   background-color: #181818;
   color: #e7e7e7;
   cursor: pointer;
-  transition: ease-in-out 0.25s;
-}
-
-.home-page {
-  text-decoration: none;
-  color: #e7e7e7;
-  margin-top: 2.5vh;
-}
-
-.home-page:hover {
-  cursor: pointer;
-  text-decoration: underline;
   transition: ease-in-out 0.25s;
 }
 

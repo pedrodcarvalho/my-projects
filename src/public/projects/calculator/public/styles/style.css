@@ -55,6 +55,18 @@ body {
   flex-direction: column;
 }
 
+.home-page {
+  text-decoration: none;
+  color: #e7e7e7;
+  margin-top: 2.5vh;
+}
+
+.home-page:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  transition: ease-in-out 0.25s;
+}
+
 .calculator {
   display: flex;
   flex-direction: column;
@@ -87,18 +99,6 @@ body {
 
 .buttons .double  {
   width: 150px;
-}
-
-.home-page {
-  text-decoration: none;
-  color: #e7e7e7;
-  margin-top: 2.5vh;
-}
-
-.home-page:hover {
-  cursor: pointer;
-  text-decoration: underline;
-  transition: ease-in-out 0.25s;
 }
 
 @media screen and (max-width: 320px) {

@@ -55,6 +55,18 @@ body {
   flex-direction: column;
 }
 
+.home-page {
+  text-decoration: none;
+  color: #e7e7e7;
+  margin-top: 2.5vh;
+}
+
+.home-page:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  transition: ease-in-out 0.25s;
+}
+
 .flex button {
   color: #181818;
   border: 2px solid #181818;
@@ -71,18 +83,6 @@ body {
   color: #e7e7e7;
   cursor: pointer;
   border: 2px solid #e7e7e7;
-  transition: ease-in-out 0.25s;
-}
-
-.home-page {
-  text-decoration: none;
-  color: #e7e7e7;
-  margin-top: 2.5vh;
-}
-
-.home-page:hover {
-  cursor: pointer;
-  text-decoration: underline;
   transition: ease-in-out 0.25s;
 }
 
