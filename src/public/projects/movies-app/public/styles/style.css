@@ -139,12 +139,18 @@ body {
   justify-content: center;
 }
 
+.movies h1,
+p {
+  margin-bottom: 0.5vh;
+}
+
 .big {
   width: 39vw;
   height: 50vh;
 }
 
 .break-text {
+  font-variant: normal;
   width: 39vw;
 }
 
