@@ -1,21 +1,45 @@
 const rows = document.getElementsByClassName('projects');
+const bounceIcons = document.querySelector('.social').children;
+const title = document.querySelector('.text');
 
-window.onload = () => {
-    setProjects();
-};
-
-const setProjectsBtns = (btns) => {
-    for (let i = 0; i < btns.children.length; i++) {
-        btns.children[i].addEventListener('click', () => {
-            window.location.href = `/projects/${btns.children[i].id}/index.html`;
-        });
+const setProjectsBtns = () => {
+    for (const btns of rows) {
+        for (const btn of btns.children) {
+            btn.addEventListener('click', () => {
+                window.location.href = `/projects/${btn.id}/index.html`;
+            });
+        }
     }
 };
 
-const setProjects = () => {
-    for (let i = 0; i < rows.length; i++) {
-        let btns = document.getElementsByClassName('projects')[i];
+const setIconsBounce = () => {
+    let delay = 500;
 
-        setProjectsBtns(btns);
+    for (const icon of bounceIcons) {
+        setTimeout(() => {
+            icon.classList.add('fa-bounce');
+
+
+            icon.addEventListener('click', () => {
+                if (icon.classList.contains('fa-github')) {
+                    window.open('https://github.com/pedrodcarvalho');
+                }
+                else if (icon.classList.contains('fa-linkedin')) {
+                    window.open('https://www.linkedin.com/in/pedro-carvalho-a92bab210/');
+                }
+                else if (icon.classList.contains('fa-envelope')) {
+                    window.open('mailto:pedrodc51203@gmail.com');
+                }
+            });
+
+            icon.addEventListener('mouseover', () => {
+                icon.classList.remove('fa-bounce');
+            });
+        }, delay);
+
+        delay += 250;
     }
 };
+
+setProjectsBtns();
+setIconsBounce();

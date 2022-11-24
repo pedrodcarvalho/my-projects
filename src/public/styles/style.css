@@ -67,6 +67,10 @@ body {
   transition: ease-in-out 0.25s;
 }
 
+a {
+  color: #e7e7e7;
+}
+
 .projects {
   width: 100vw;
   margin-bottom: 2.5vh;
@@ -90,6 +94,24 @@ body {
   cursor: pointer;
   border: 2px solid #e7e7e7;
   transition: ease-in-out 0.25s;
+}
+
+.social {
+  margin-top: 2.5vh;
+  margin-bottom: 2.5vh;
+}
+
+.social i {
+  margin: 0.5vw;
+}
+
+.social i:hover {
+  cursor: pointer;
+}
+
+.fa-bounce {
+  --fa-bounce-rebound: 0;
+  --fa-bounce-height: -5px;
 }
 
 @media screen and (max-width: 768px) {
