@@ -8,7 +8,7 @@ window.onload = () => {
           <td>
             <button id="done">
               <p id="done">Done</p>
-              <span class="material-symbols-outlined" id="done">task</span>
+              <i id="done" class="fa-solid fa-check"></i>
             </button>
           </td>
           ${localStorage.getItem(localStorage.key(i)) === 'done' ?
@@ -16,7 +16,7 @@ window.onload = () => {
           <td>
             <button id="delete">
               <p id="delete">Delete</p>
-              <span class="material-symbols-outlined" id="delete">delete</span>
+              <i id="delete" class="fa-solid fa-trash"></i>
             </button>
           </td>
         </tr>
@@ -33,14 +33,14 @@ document.querySelector('button').addEventListener('click', () => {
           <td>
             <button id="done">
               <p id="done">Done</p>
-              <span class="material-symbols-outlined" id="done">task</span>
+              <i id="done" class="fa-solid fa-check"></i>
             </button>
           </td>
           <td class="task">${task.value}</td>
           <td>
             <button id="delete">
               <p id="delete">Delete</p>
-              <span class="material-symbols-outlined" id="delete">delete</span>
+              <i id="delete" class="fa-solid fa-trash"></i>
             </button>
           </td>
         </tr>
