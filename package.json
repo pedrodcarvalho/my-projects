@@ -2,7 +2,6 @@
     "name": "my-projects",
     "version": "1.0.0",
     "main": "./src/app.js",
-    "devDependencies": {},
     "scripts": {
         "start": "nodemon app.js"
     },
@@ -18,6 +17,7 @@
     "homepage": "https://github.com/pedrodcarvalho/my-projects#readme",
     "description": "Website for my projects",
     "dependencies": {
-        "dotenv": "^16.0.3"
+        "dotenv": "^16.0.3",
+        "express": "^4.18.2"
     }
 }
