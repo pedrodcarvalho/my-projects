@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
+
+::selection {
+  background: transparent;
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #292929;
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e7e7e7;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: default;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-variant: small-caps;
+  background-color: #181818;
+  color: #e7e7e7;
+}
+
+#country {
+  margin-top: 0;
+}
+
+.text {
+  font-size: 3rem;
+  margin-bottom: 5vh;
+}
+
+.small {
+  font-size: 0.9rem;
+  margin-top: 2.5vh;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.home-page {
+  text-decoration: none;
+  color: #e7e7e7;
+  margin-top: 2.5vh;
+}
+
+.home-page:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  transition: ease-in-out 0.25s;
+}
+
+.input {
+  display: flex;
+  margin-bottom: 2.5vh;
+}
+
+.input input[type="text"] {
+  font-family: "Poppins", sans-serif;
+  font-variant: small-caps;
+  background-color: #e7e7e7;
+  color: #181818;
+  caret-color: #181818;
+  border: 5px solid #e7e7e7;
+  border-radius: 12px 0 0 12px;
+  font-size: 1.25rem;
+  outline: none;
+}
+
+.input input[type="text"]:hover {
+  cursor: text;
+}
+
+.input input::selection {
+  background: #181818;
+  color: #e7e7e7;
+}
+
+.input button {
+  font-family: "Poppins", sans-serif;
+  font-variant: small-caps;
+  background-color: #e7e7e7;
+  color: #181818;
+  padding: 5px;
+  border: 2px solid #e7e7e7;
+  border-radius: 0 12px 12px 0;
+  font-size: 1.25rem;
+}
+
+.input button:hover {
+  background-color: #181818;
+  color: #e7e7e7;
+  cursor: pointer;
+  transition: ease-in-out 0.25s;
+}
+
+.row {
+  margin-bottom: 1vh;
+}
+
+.image-frame {
+  width: 13.5vw;
+  height: 9vw;
+  margin-right: 0.5vh;
+}
+
+.image-frame img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+@media screen and (max-width: 768px) {
+  .input input[type="text"] {
+    width: 50vw;
+  }
+
+  .input button {
+    width: 25vw;
+  }
+
+  .images * {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image-frame {
+    width: 60vw;
+    height: 40vw;
+    margin-right: 0;
+    margin-bottom: 1vh;
+  }
+}
